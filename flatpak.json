@@ -1,0 +1,33 @@
+{
+  "app-id": "com.endangerednayla.YoutubeTV",
+  "runtime": "org.kde.Platform",
+  "runtime-version": "6.6",
+  "sdk": "org.kde.Sdk",
+  "command": "run.sh",
+  "modules": [
+    {
+      "name": "youtube-tv-app",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -m 755 -d /app/bin/",
+        "cp -r ./* /app/bin/",
+        "echo '#!/bin/sh' > /app/bin/run.sh",
+        "echo 'exec /app/bin/YouTubeTV --no-sandbox \"$@\"' >> /app/bin/run.sh",
+        "chmod +x /app/bin/run.sh"
+      ],
+      "sources": [
+        {
+          "type": "dir",
+          "path": "./YouTubeTV-linux-x64"
+        }
+      ]
+    }
+  ],
+  "finish-args": [
+    "--share=network",
+    "--filesystem=home",
+    "--socket=x11",
+    "--socket=wayland",
+    "--env=FFMPEG_PATH=/usr/lib/x86_64-linux-gnu/libffmpeg.so"
+  ]
+}

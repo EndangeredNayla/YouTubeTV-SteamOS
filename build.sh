@@ -1,0 +1,1 @@
+nativefier "https://www.youtube.com/tv" --name "YouTubeTV" --out ./YouTubeTVApp --maximize --user-agent "Mozilla/5.0 (PS4; Leanback Shell) Gecko/20100101 Firefox/65.0 LeanbackShell/01.00.01.75 Sony PS4/ (PS4, , no, CH)" --browserwindow-options '{"fullscreen": true, "zoomFactor": 2.0}'
